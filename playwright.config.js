@@ -11,25 +11,26 @@ export default defineConfig({
   reporter: 'html',
   use: {
     video: 'on-first-retry',
-    headless: false,
+    headless: true,
   },
 
   projects: [
+
+    {
+      name: 'chromium',
+      use: { 
+        ...devices['Desktop Chrome'],
+        viewport: {width: 1900, height: 1080} 
+      },
+    },
+
+  /*
 
     {
       name: 'Google Chrome',
       use: { 
         ...devices['Desktop Chrome'],
         channel: 'chrome',
-        viewport: {width: 1900, height: 1080} 
-      },
-    },
-
-  /*
-    {
-      name: 'chromium',
-      use: { 
-        ...devices['Desktop Chrome'],
         viewport: {width: 1900, height: 1080} 
       },
     },
